@@ -1,17 +1,29 @@
-# Car Service Center API
+# Car Service Center
 
-An enterprise-grade backend API built with .NET 8 and PostgreSQL, designed to manage service center ecosystems. This project serves as a showcase of modern C# architectural patterns, strict typing, and automated CI/CD.
+Full-stack car service center management system covering the full booking lifecycle - from initial scheduling through technician checklists and repair approval workflows - built with .NET 8
 
-## 🚀 Technical Highlights
+## What It Does
 
-* **Architecture:** Built using Clean Architecture principles to separate business logic from infrastructure.
-* **Data Access:** Driven by Entity Framework Core (EF Core) using a Code-First migration approach with PostgreSQL.
-* **Robust Tooling:** Leverages strongly-typed DTOs (Data Transfer Objects), built-in Dependency Injection, and asynchronous (`async/await`) patterns throughout.
-* **Continuous Integration:** Automated build and test verification via GitHub Actions on every push.
+A service advisor books a customer's vehicle through a **Blazor web app**. A technitian picks up the job on a **.NET MAUI mobile app**, works through a checklist of service items, and can request client approval for any additional repairs discovered during the service. The advisor manages the approval flow and communicates with the client. The booking progreses through a defined lifecycle until the vehicle is ready for pickup.
 
-## 🛠️ Tech Stack
+## Booking Lifecycle
 
-* **Language/Runtime:** C# / .NET 8
-* **Database:** PostgreSQL
-* **ORM:** Entity Framework Core
-* **CI/CD:** GitHub Actions
+Scheduled -> CheckedIn -> Assigned -> InProgress <-> AwaitingApproval -> ReadyForPickup -> Closed
+
+When a technitian raises an approval request, the booking moves to 'AwaitingApproval'. The advisor works through a checklist of pending approval items, contacting the client for each one. The booking returns to 'InProgess' automatically once all approvals are resolved.
+
+## Service Types
+
+- **Basic Service** - fixed, immutable checklist of items; all locked and cannot be removed
+- **Full Service** - all basic items (locked) + additional standard items + any client-specific itmes agreed upfront with the advisor
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| API | ASP.NET Core Web API (.NET 8) |
+| Web (Service Advisors) | Blazor |
+| Mobile (Technitians) | .NET MAUI |
+| Database | PostgreSQL |
+| ORM | Entity Framework Core (Code-First) |
+| Auth | ASP.NET Core Identity + JWT |

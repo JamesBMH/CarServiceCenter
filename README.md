@@ -23,7 +23,7 @@ When a technician raises an approval request, the booking moves to `AwaitingAppr
 |---|---|
 | API | ASP.NET Core Web API (.NET 8) |
 | Web (Service Advisors) | Blazor |
-| Mobile (Technitians) | .NET MAUI |
+| Mobile (Technicians) | .NET MAUI |
 | Database | PostgreSQL |
 | ORM | Entity Framework Core (Code-First) |
 | Auth | ASP.NET Core Identity + JWT |

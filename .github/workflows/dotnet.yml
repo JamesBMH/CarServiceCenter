@@ -19,7 +19,7 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore dependecies
-        run: dotnet restore
+        run: dotnet restore CarServiceCenter.sln
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build CarServiceCenter.sln --no-restore

@@ -23,8 +23,4 @@
     <ProjectReference Include="..\CarServiceCenter.Infrastructure\CarServiceCenter.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

@@ -1,3 +1,4 @@
+using CarServiceCenter.Application.Services;
 using CarServiceCenter.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<CustomerService>();
 
 var app = builder.Build();
 

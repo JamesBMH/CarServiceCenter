@@ -15,6 +15,7 @@ builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<VehicleService>();
 builder.Services.AddScoped<TechnitianService>();
 builder.Services.AddScoped<ServiceTypeService>();
+builder.Services.AddScoped<ServiceTypeItemService>();
 
 var app = builder.Build();
 

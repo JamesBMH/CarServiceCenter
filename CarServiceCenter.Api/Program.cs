@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<VehicleService>();
 builder.Services.AddScoped<TechnitianService>();
@@ -18,6 +19,7 @@ builder.Services.AddScoped<ServiceTypeService>();
 builder.Services.AddScoped<ServiceTypeItemService>();
 builder.Services.AddScoped<BookingService>();
 builder.Services.AddScoped<BookingServiceItemService>();
+builder.Services.AddScoped<ApprovalRequestService>();
 
 var app = builder.Build();
 

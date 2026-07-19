@@ -17,5 +17,5 @@ public class AppDbContext : DbContext
     public DbSet<ServiceTypeItem> ServiceTypeItems { get; set; }
     public DbSet<Booking> Bookings { get; set; }
     public DbSet<BookingServiceItem> BookingServiceItems { get; set; }
-    public DbSet<ApprovalRequest> ApprovalRequest { get; set; }
+    public DbSet<ApprovalRequest> ApprovalRequests { get; set; }
 }

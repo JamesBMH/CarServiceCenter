@@ -49,7 +49,7 @@ namespace CarServiceCenter.Application.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<ApprovalRequestDto> CreatedAsync(CreateApprovalRequestDto dto)
+        public async Task<ApprovalRequestDto> CreateAsync(CreateApprovalRequestDto dto)
         {
             var approvalRequest = new ApprovalRequest
             {

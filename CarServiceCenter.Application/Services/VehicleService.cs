@@ -22,6 +22,7 @@ namespace CarServiceCenter.Application.Services
                 {
                     Id = v.Id,
                     Make = v.Make,
+                    Model = v.Model,
                     Year = v.Year,
                     LicensePlate = v.LicensePlate,
                     CustomerId = v.CustomerId,

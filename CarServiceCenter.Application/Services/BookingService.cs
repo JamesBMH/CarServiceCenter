@@ -64,7 +64,7 @@ namespace CarServiceCenter.Application.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<BookingDto> CreatedAsync(CreateBookingDto dto)
+        public async Task<BookingDto> CreateAsync(CreateBookingDto dto)
         {
             var booking = new Booking
             {

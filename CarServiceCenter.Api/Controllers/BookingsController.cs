@@ -33,7 +33,7 @@ namespace CarServiceCenter.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<BookingDto>> Create(CreateBookingDto dto)
         {
-            var booking = await _bookingService.CreatedAsync(dto);
+            var booking = await _bookingService.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = booking.Id }, booking);
         }
     }

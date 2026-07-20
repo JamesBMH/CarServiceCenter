@@ -33,7 +33,7 @@ namespace CarServiceCenter.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<ApprovalRequestDto>> Create(CreateApprovalRequestDto dto)
         {
-            var request = await _approvalRequestService.CreatedAsync(dto);
+            var request = await _approvalRequestService.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = request.Id }, request);
         }
     }

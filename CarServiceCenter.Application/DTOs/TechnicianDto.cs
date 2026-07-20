@@ -1,6 +1,6 @@
 ﻿namespace CarServiceCenter.Application.DTOs
 {
-    public class TechnitianDto
+    public class TechnicianDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;

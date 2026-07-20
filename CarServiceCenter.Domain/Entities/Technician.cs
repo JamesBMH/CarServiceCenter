@@ -1,6 +1,6 @@
 ﻿namespace CarServiceCenter.Domain.Entities
 {
-    public class Technitian
+    public class Technician
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;

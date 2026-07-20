@@ -21,7 +21,7 @@ namespace CarServiceCenter.Application.Services
                 .Include(b => b.Customer)
                 .Include(b => b.Vehicle)
                 .Include(b => b.ServiceType)
-                .Include(b => b.Technitian)
+                .Include(b => b.Technician)
                 .Select(b => new BookingDto
                 {
                     Id = b.Id,
@@ -33,8 +33,8 @@ namespace CarServiceCenter.Application.Services
                     VehicleInfo = b.Vehicle.Year + " " + b.Vehicle.Make + " " + b.Vehicle.Model,
                     ServiceTypeId = b.ServiceTypeId,
                     ServiceTypeName = b.ServiceType.Name,
-                    TechnitianId = b.TechnitianId,
-                    TechnicianName = b.Technitian != null ? b.Technitian.FirstName + " " + b.Technitian.LastName : null
+                    TechnicianId = b.TechnicianId,
+                    TechnicianName = b.Technician != null ? b.Technician.FirstName + " " + b.Technician.LastName : null
                 })
                 .ToListAsync();
         }
@@ -45,7 +45,7 @@ namespace CarServiceCenter.Application.Services
                 .Include(b => b.Customer)
                 .Include(b => b.Vehicle)
                 .Include(b => b.ServiceType)
-                .Include(b => b.Technitian)
+                .Include(b => b.Technician)
                 .Where(b => b.Id == id)
                 .Select(b => new BookingDto
                 {
@@ -58,8 +58,8 @@ namespace CarServiceCenter.Application.Services
                     VehicleInfo = b.Vehicle.Year + " " + b.Vehicle.Make + " " + b.Vehicle.Model,
                     ServiceTypeId = b.ServiceTypeId,
                     ServiceTypeName = b.ServiceType.Name,
-                    TechnitianId = b.TechnitianId,
-                    TechnicianName = b.Technitian != null ? b.Technitian.FirstName + " " + b.Technitian.LastName : null
+                    TechnicianId = b.TechnicianId,
+                    TechnicianName = b.Technician != null ? b.Technician.FirstName + " " + b.Technician.LastName : null
                 })
                 .FirstOrDefaultAsync();
         }

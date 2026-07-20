@@ -13,7 +13,7 @@ namespace CarServiceCenter.Application.DTOs
         public string VehicleInfo { get; set; } = string.Empty;
         public int ServiceTypeId { get; set; }
         public string ServiceTypeName { get; set; } = string.Empty;
-        public int? TechnitianId { get; set; } 
+        public int? TechnicianId { get; set; } 
         public string? TechnicianName { get; set; }
     }
 }

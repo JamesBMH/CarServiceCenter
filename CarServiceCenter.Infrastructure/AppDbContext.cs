@@ -12,7 +12,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
-    public DbSet<Technitian> Technitians { get; set; }
+    public DbSet<Technician> Technicians { get; set; }
     public DbSet<ServiceType> ServiceTypes { get; set; }
     public DbSet<ServiceTypeItem> ServiceTypeItems { get; set; }
     public DbSet<Booking> Bookings { get; set; }

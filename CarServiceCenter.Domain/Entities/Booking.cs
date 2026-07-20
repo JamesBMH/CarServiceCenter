@@ -13,6 +13,6 @@ public class Booking
     public Vehicle Vehicle { get; set; } = null!;
     public int ServiceTypeId { get; set; }
     public ServiceType ServiceType { get; set; } = null!;
-    public int? TechnitianId { get; set; }
-    public Technitian? Technitian { get; set; }
+    public int? TechnicianId { get; set; }
+    public Technician? Technician { get; set; }
 }

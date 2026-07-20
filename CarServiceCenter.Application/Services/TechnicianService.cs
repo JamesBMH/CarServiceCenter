@@ -6,19 +6,19 @@ using Microsoft.EntityFrameworkCore;
 namespace CarServiceCenter.Application.Services
 {
 
-    public class TechnitianService
+    public class TechnicianService
     {
         private readonly AppDbContext _context;
 
-        public TechnitianService(AppDbContext context)
+        public TechnicianService(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<List<TechnitianDto>> GetAllAsync()
+        public async Task<List<TechnicianDto>> GetAllAsync()
         {
-            return await _context.Technitians
-                .Select(t => new TechnitianDto
+            return await _context.Technicians
+                .Select(t => new TechnicianDto
                 {
                     Id = t.Id,
                     FirstName = t.FirstName,
@@ -27,11 +27,11 @@ namespace CarServiceCenter.Application.Services
                 .ToListAsync();
         }
 
-        public async Task<TechnitianDto?> GetByIdAsync(int id)
+        public async Task<TechnicianDto?> GetByIdAsync(int id)
         {
-            return await _context.Technitians
+            return await _context.Technicians
                 .Where(t => t.Id == id)
-                .Select(t => new TechnitianDto
+                .Select(t => new TechnicianDto
                 {
                     Id = t.Id,
                     FirstName = t.FirstName,
@@ -40,18 +40,18 @@ namespace CarServiceCenter.Application.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<TechnitianDto> CreateAsync(CreateTechnitianDto dto)
+        public async Task<TechnicianDto> CreateAsync(CreateTechnicianDto dto)
         {
-            var technitian = new Technitian
+            var technitian = new Technician
             {
                 FirstName = dto.FirstName,
                 LastName = dto.LastName
             };
 
-            _context.Technitians.Add(technitian);
+            _context.Technicians.Add(technitian);
             await _context.SaveChangesAsync();
 
-            return new TechnitianDto
+            return new TechnicianDto
             {
                 Id = technitian.Id,
                 FirstName = technitian.FirstName,
